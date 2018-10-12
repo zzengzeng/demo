@@ -5,7 +5,7 @@
 ### 开发启动
 	npm run start
 
-### 开发启动
+### 说明
 	需要新建.env文件 
         APIHOST=http://api.bitbee.io/
 
