@@ -1,0 +1,35 @@
+<div class="hots">
+	<div class="hots-tit">
+		热门排行
+	</div>
+	<div class="info-list">
+		{% for item in TechSorts %}
+		<div class="list-item">
+			<em class="item-num">{{loop.index}}</em>
+			<div class="item-info">
+				<a href="/d/{{item.id}}">
+					<h3 class="item-tit">
+						{{item.title}}
+					</h3>
+				</a>
+				<p class="item-tips">
+					{% if item.profileImageUrl %}
+					<a class="avatar">
+						<img src="{{item.profileImageUrl}}" alt="" />
+						{% if user.nickName == item.author && certificateStatus == 2 %}
+						<span>
+							<img src="/img/ico_renzheng.png" alt="">
+						</span>
+						{% endif %}
+					</a>
+					{% endif %}
+					<em>{{item.author}}</em>
+					<span> · {{item.createTime}} · {{item.readCount}}阅</span>
+				</p>
+			</div>
+		</div>
+		{% endfor %}
+	
+	</div>
+</div>
+

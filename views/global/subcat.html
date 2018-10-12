@@ -1,0 +1,62 @@
+<nav class="center">
+	{% for item in lists %}
+	<dl class="list">
+		<dt class="title">
+			<span class="icon sty{{loop.index}}">
+				{% if loop.index == 1%}
+				入门
+				{% elseif loop.index == 2 %}
+				升级
+				{% else %}
+				专家
+				{% endif %}
+			</span>
+		</dt>
+		{% for subitem in item.articlesInfo %}
+		<dd class="items">
+			<div class="align">
+				<a href='/d/{{subitem.id}}'>{{subitem.title}}</a>
+			</div>
+		</dd>
+		{% endfor %}
+	</dl>
+	{% endfor %}
+	<dl class="list">
+		<dt class="title">
+			<span class="icon sty4">分类</span>
+		</dt>
+		<dd class="items" first>
+			<div class="align">
+				<a href='/technology/cat-9'>区块链</a>
+				<span class="split">|</span>
+				<a href='/technology/cat-10'>比特币</a>
+			</div>
+		</dd>
+		<dd class="items">
+			<div class="align">
+				<a href='/technology/cat-11'>以太坊</a>
+				<span class="split">|</span>
+				<a href='/technology/cat-12'>EOS</a>
+			</div>
+		</dd>
+		<dd class="items">
+			<div class="align">
+				<a href='/technology/cat-13'>智能合约</a>
+				<span class="split">|</span>
+				<a href='/technology/cat-14'>共识算法</a>
+			</div>
+		</dd>
+		<dd class="items">
+			<div class="align">
+				<a href='/technology/cat-15'>挖矿</a>
+				<span class="split">|</span>
+				<a href='/technology/cat-16'>钱包</a>
+			</div>
+		</dd>
+		<dd class="items">
+			<div class="align">
+				<a href='/technology/cat-17'>超级账本</a>
+			</div>
+		</dd>
+	</dl>
+</nav>

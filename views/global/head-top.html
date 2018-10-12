@@ -1,0 +1,231 @@
+<header class="header-top">
+	<a href="/" class="logo" title="每个人生来都有追求公平自由和财富不可侵犯权利，但现有互联网体系有个大bug需要一种新的技术来拯救">
+		<nav class="logo-bg">
+
+		</nav>
+		<span>区块链应用网络</span>
+	</a>
+	<div class="top-middle">
+		<ul class="top-cat">
+			<li>
+				<a href="/" class="a{% if name == 'home' %} cur {% endif %}">首页</a>
+			</li>
+			<li js-nav-hover="#nav-block">
+				<a href="/technology" class="a{% if name == 'technology' %} cur {% endif %}">
+					学院
+				</a>
+				<section class="nav-block" id="nav-block">
+					{% include "./subcat.html" ignore missing %}
+				</section>
+			</li>
+
+			<li>
+				<a href="/news" class="a{% if name == 'news' %} cur {% endif %}">资讯</a>
+			</li>
+			<li>
+				<a href="/express" class="a{% if name == 'express' %} cur {% endif %}">快报</a>
+			</li>
+			
+			<li>
+				<a href="/videos" class="a{% if name == 'videos' %} cur {% endif %}">视频</a>
+			</li>
+			{#<li>
+				<a href="/market/data" class="a{% if name == 'market' %} cur {% endif %}">行情</a>
+			</li>#}
+		</ul>
+
+	</div>
+	<div class="search-box">
+		<form action="/search" target="_blank" method="get">
+			<input class="search-bar j-e-search" value="" name="q" placeholder="请输入搜索内容">
+			<button type="submit" class="search-btn">
+				<i class="iconfont icon-sousuo"></i>
+			</button>
+		</form>
+	</div>
+	{% if user%}
+	<div class="write">
+		{% if certificateStatus == 2 %}
+		<a href="/write">
+			<i class="iconfont icon-xiezuo"></i>
+			<span>写文章</span>
+		</a>
+		{% else %}
+		<a href="/user/{{user.nickName}}/certification">
+			<i class="iconfont icon-xiezuo"></i>
+			<span>写文章</span>
+		</a>
+		{% endif %}
+	</div>
+	{% endif %}
+	<ul class="top-menu">
+		{% if user%}
+		<li class="message">
+			<a href="javascript:;" class="ico">
+				<sup id="messageNum"></sup>
+				<i class="iconfont icon-xiaoxitongzhi"></i>
+			</a>
+			<div class="message-box">
+				<h2 class="message-box-tit">
+					我的通知	
+				</h2>
+				<div class="message-box-cnt">
+					<ul id="informList"></ul>
+				</div>
+			</div>
+		</li>
+		{#<li>
+			<a href="/user/{{user.nickName}}/favorites/cateories" class="ico">
+				<i class="iconfont icon-shoucang1"></i>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" class="ico">
+				<i class="iconfont icon-xiaoxitongzhi"></i>
+			</a>
+		</li>
+		<li class="private">
+			<a href="javascript:;" class="ico">
+				<i class="iconfont icon-sixin"></i>
+			</a>
+			<div class="private-box">
+				<h2 class="private-box-tit">
+					我的私信	
+				</h2>
+				<div class="private-box-cnt">
+					<dl>
+						<dt>
+							<img src="/img/avatar2.png">	
+						</dt>
+						<dd>
+							<h3>雷坤</h3>
+							<p>老子吃火锅，你吃火锅底料。我对你老子吃火锅，你吃火锅底料。我对你</p>		
+						</dd>	
+					</dl>
+					<dl>
+						<dt>
+							<img src="/img/avatar2.png">	
+						</dt>
+						<dd>
+							<h3>雷坤</h3>
+							<p>老子吃火锅，你吃火锅底料。我对你老子吃火锅，你吃火锅底料。我对你</p>		
+						</dd>	
+					</dl>
+				</div>
+				<div class="private-box-foot">
+					<a href="javascript:;" class="write-private-msg">
+						<i class="iconfont icon-pencil"></i>
+						<span>写新私信</span>
+					</a>
+					<a href="javascript:;" class="see-all-private">
+						查看全部私信
+					</a>	
+				</div>
+			</div>
+		</li>#}
+		{% else %}
+		<li class="login-w">
+			<a href="/login" class="login j-e-login">登录</a>
+			<a class="sign-up j-e-register" href="/register">注册</a>
+		</li>
+		{% endif %}
+	</ul>
+	{% if user %}
+	<div class="user">
+		<div class="select-container">
+			<div class="active-option">
+				<div class="img-w">
+					<img src="/user/avatar?v={{randomnum}}" id="upImg3">
+					<em><img src="/img/ico_renzheng.png" alt=""></em>
+				</div>
+				<span>{{ user.nickName }}</span>
+
+				<i class="caret"></i>
+			</div>
+			<ul class="select-options">
+				{#
+				<li>
+					<a href="/user">
+						<i class="iconfont icon-gerenzhongxin"></i>
+						<span>个人中心</span>
+					</a>
+				</li>
+				<li>
+					<a href="/user/settings/updatepwd">
+						<i class="iconfont icon-shezhi"></i>
+						<span>设置</span>
+					</a>
+				</li>
+				<li>
+					<a href="/logout">
+						<i class="iconfont icon-tuichu"></i>
+						<span>退出</span>
+					</a>
+				</li>
+				#}
+				<li>
+					<a href="/user/{{user.nickName}}">
+						<i class="iconfont icon-gerenzhongxin"></i>
+						<span>我的文章</span>
+					</a>
+				</li>
+				<li>
+					<a href="/user/{{user.nickName}}/favorites/cateories">
+						<i class="iconfont icon-shoucang1"></i>
+						<span>我的收藏</span>
+					</a>
+				</li>
+				<li>
+					<a href="/user/{{user.nickName}}/attention">
+						<i class="iconfont icon-guanzhuhou"></i>
+						<span>我的关注</span>
+					</a>
+				</li>
+				<li>
+					<a href="/user/{{user.nickName}}/fans">
+						<i class="iconfont icon-fensi"></i>
+						<span>我的粉丝</span>
+					</a>
+				</li>
+				<li>
+					<a href="/user/{{user.nickName}}/strength">
+						<i class="iconfont icon-ic_fengjing"></i>
+						<span>我的蜂晶</span>
+					</a>
+				</li>
+				<li>
+					<a href="/user/{{user.nickName}}/invite">
+						<i class="iconfont icon-ic_yaoqing"></i>
+						<span>我的邀请</span>
+					</a>
+				</li>
+				<li>
+					<a href="/user/{{user.nickName}}/income">
+						<i class="iconfont icon-ic_shouyi"></i>
+						<span>我的收益</span>
+					</a>
+				</li>
+				<li>
+					<a href="/user/settings/updatepwd">
+						<i class="iconfont icon-shezhi"></i>
+						<span>我的设置</span>
+					</a>
+				</li>
+				{#
+				<li>
+					<a href="javascript:;">
+						<i class="iconfont icon-shezhi"></i>
+						<span>帮助反馈</span>
+					</a>
+				</li>#}
+				<li>
+					<a href="/logout">
+						<i class="iconfont icon-tuichu"></i>
+						<span>退出</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	{% endif%}
+</header>

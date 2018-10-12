@@ -1,0 +1,41 @@
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+基础flex布局
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.flex(){
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+.flex-column(){
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+//单行省略
+.ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    //对IE7+ | Safari的兼容
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    //对FireFox的兼容
+}
+//多行省略
+.multi-ellipsis(@row) {
+    overflow: hidden;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @row;
+    word-break: break-all;
+    word-wrap: break-word;
+    height: 44px;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+

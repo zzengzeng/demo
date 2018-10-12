@@ -1,0 +1,57 @@
+<ul class="info-list-nav">
+    {% for item in techstabs %}
+    <li class="{% if CurTech == item.id %} cur {% endif%}">
+        <a href="/technology/cat-{{item.id}}" js-tab-tech-check="{{item.id}}">{{item.category}}</a>
+    </li>
+    {% endfor %}
+</ul>
+<div class="info-list-cnt">
+    <div class="info-list">
+        {% for item in techs %}
+        <div class="list-item">
+            <div class="item-info">
+                <a href="/technology/cat-{{CurTech}}/{{item.id}}">
+                    <h3 class="item-tit">
+                        {{item.title}} 
+                    </h3>
+                    <p class="item-des">
+                    {{item.abstract}}
+                    </p>
+                </a> 
+                <p class="item-tips">
+                    {% if item.profileImageUrl %}
+                        <a class="avatar">
+                            <img src="/avatars?url={{item.profileImageUrl}}" alt="" />
+                            {% if user.nickName == item.author && certificateStatus == 2 %}
+                            <span>
+                                <img src="/img/ico_renzheng.png" alt="">
+                            </span>
+                            {% endif %}
+                        </a>
+                    {% endif %}
+                    <em>{{item.author}}</em>
+                    <span> · {{item.createTime}} · {{item.readCount}} 阅</span>
+                </p>
+            </div>
+            {% if item.articleImageUrl!=''%}
+            <div class="item-cover">
+                <a href="/technology/cat-{{CurTech}}/{{item.id}}">
+                    <img src="{{item.articleImageUrl}}" alt="">
+                </a>  
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div> 
+    <div class="info-right">
+        <div class="right-ad">
+            {% include "../../common/ad.html" ignore missing %}      
+        </div>
+        {% include "./tech-sort.html" ignore missing %}  
+    </div>
+</div>
+<div class="wrap-more">
+    <a href="/technology/cat-{{CurTech}}">更多&gt;&gt;</a>
+</div>
+    
+    

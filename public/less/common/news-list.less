@@ -1,0 +1,131 @@
+.info-list{
+	flex: 1 1 auto;
+	.list-item{
+		display:flex;
+		justify-content: space-between;
+		margin: 0 0 30px 0;
+		line-height: 22px;
+		em{
+			font-size: 24px;
+		}
+		.item-cover{
+			width: 181px;
+			height: 110px;
+			flex: 0 0 181px;
+			overflow: hidden;
+			border-radius: 3px;
+			a{
+				display: block;
+				&:hover{
+					img{
+						transform: scale(1.1);
+						transition: all .5s ease-out .1s;
+					}
+				}
+			}
+			img{
+				border-radius: 3px;
+				max-width: 100%;
+			}
+		}
+		.item-info{
+			//.flex-column();
+			justify-content: space-around;
+			.item-tit{
+				margin: 0 0 7px 0;
+				font-size: 16px;
+				color: #00120E;
+				line-height: 22px;
+				font-weight: bold;
+				&:hover{
+					color:#1fab89;
+				}
+				a{
+					.multi-ellipsis(1);
+					font-size: 16px;
+					color: #00120E;
+					font-weight: bold;
+				}
+			}
+			.item-des{
+				margin: 0 0 23px 0;
+				font-size: 14px;
+				color: #87969D;
+				.multi-ellipsis(1);
+				line-height: 20px;
+			}
+			.item-tips{
+				font-size: 12px;
+				color: #87969D;
+				.flex();
+				align-items: center;
+				justify-content: flex-start;
+				.avatar{
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+					margin: 0 10px 0 0;
+					position: relative;
+					z-index: 1;
+					img{
+						max-width: 100%;
+						border-radius: 50%;
+						width: 100%;
+						height: 100%;
+					}
+					span{
+						position: absolute;
+						z-index: 2;
+						right: -3px;
+						bottom: 3px;
+						width: 12px;
+						height: 12px;
+					}
+				}
+				em{
+					font-size: 14px;
+					color: #00120E;
+					margin: 0 10px 0 0;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+#loadingMore{
+	width: 100%;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: -40px;
+	text-align: center;
+	line-height: 38px;
+	font-family: PingFang-SC-Bold;
+	font-size: 18px;
+	color: #87969D;
+	opacity: 0;
+	.spinner {
+		margin: 0 auto;
+		width: 150px;
+		text-align: center;
+		div{
+			width: 8px;
+			height: 8px;
+			background: #87969D;
+			border-radius: 100%;
+			display: inline-block;
+			-webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+			animation: bouncedelay 1.4s infinite ease-in-out;
+			/* Prevent first frame from flickering when animation starts */
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+		.bounce1 {
+			-webkit-animation-delay: -0.32s;
+			animation-delay: -0.32s;
+		}
+		.bounce2 {
+			-webkit-animation-delay: -0.16s;
+			animation-delay: -0.16s;
+		}
+	}
+}
