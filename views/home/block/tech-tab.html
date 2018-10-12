@@ -1,7 +1,7 @@
 <ul class="info-list-nav">
     {% for item in techstabs %}
     <li class="{% if CurTech == item.id %} cur {% endif%}">
-        <a href="/technology/cat-{{item.id}}" js-tab-tech-check="{{item.id}}">{{item.category}}</a>
+        <a href="javascript:;" js-tab-tech-check="{{item.id}}">{{item.category}}</a>
     </li>
     {% endfor %}
 </ul>
@@ -10,7 +10,7 @@
         {% for item in techs %}
         <div class="list-item">
             <div class="item-info">
-                <a href="/technology/cat-{{CurTech}}/{{item.id}}">
+                <a href="javascript:;">
                     <h3 class="item-tit">
                         {{item.title}} 
                     </h3>
@@ -35,7 +35,7 @@
             </div>
             {% if item.articleImageUrl!=''%}
             <div class="item-cover">
-                <a href="/technology/cat-{{CurTech}}/{{item.id}}">
+                <a href="javascript:;">
                     <img src="{{item.articleImageUrl}}" alt="">
                 </a>  
             </div>
@@ -51,7 +51,7 @@
     </div>
 </div>
 <div class="wrap-more">
-    <a href="/technology/cat-{{CurTech}}">更多&gt;&gt;</a>
+    <a href="javascript:;">更多&gt;&gt;</a>
 </div>
     
     

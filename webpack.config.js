@@ -16,26 +16,7 @@ function rdom() {
 }
 module.exports = {
     entry: {      
-        home:'./public/js/home/home.js', 
-        technology:'./public/js/technology/technology.js',
-        news:'./public/js/news/news.js', 
-        express:'./public/js/express/express.js', 
-        login:'./public/js/login/login.js',
-        register:'./public/js/register/register.js',
-        search: './public/js/search/search.js',
-        userIndex: './public/js/user/index.js',
-        userEdit: './public/js/user/edit/edit.js',
-        userFindpwd: './public/js/user/findpwd/findpwd.js',
-        userCertification: './public/js/user/certification/certification.js',
-        userStrength:'./public/js/user/strength/strength.js',
-        set: './public/js/set/index.js',
-        writeIndex: './public/js/write/write.js',
-        writeHow: './public/js/write/howtowrite.js',
-        articleDetail: './public/js/article/detail.js',
-        videos:'./public/js/videos/videos.js',
-        channel:'./public/js/channel/channel.js',
-        market:'./public/js/market/market.js',
-        tag:'./public/js/tag/index.js'
+        home:'./public/js/home/home.js'
     },
     output: {
         path: path.join(__dirname, './public/dist/'),

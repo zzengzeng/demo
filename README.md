@@ -2,8 +2,12 @@
 ### 安装依赖包
         npm install
 
-### 开发实时编译。
-	npm run build
+### 开发启动
+	npm run start
+
+### 开发启动
+	需要新建.env文件 
+        APIHOST=http://api.bitbee.io/
 
 ### 演示地址
         http://localhost:5000

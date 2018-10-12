@@ -1,7 +1,7 @@
 <ul class="info-list-nav">
     {% for item in newstabs %}
     <li class="{% if CurNews == item.id %} cur {% endif%}">
-        <a href="/news-{{item.id}}" js-tab-news-check="{{item.id}}">{{item.category}}</a>
+        <a href="javascript:;" js-tab-news-check="{{item.id}}">{{item.category}}</a>
     </li>
     {% endfor %}
 </ul>
@@ -10,7 +10,7 @@
         {% for item in news %}
         <div class="list-item">
             <div class="item-info">
-                <a href="/d/{{item.id}}" >
+                <a href="javascript:;" >
                     <h3 class="item-tit">
                         {{item.title}}
                     </h3>
@@ -35,7 +35,7 @@
             </div>
             {% if item.articleImageUrl!=''%}
             <div class="item-cover">
-                <a href="/d/{{item.id}}" >
+                <a href="javascript:;" >
                     <img src="{{item.articleImageUrl}}" alt="">
                 </a>
             </div>
