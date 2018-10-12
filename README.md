@@ -61,7 +61,8 @@
 
 
 ### 部分功能截图
-    <img src="https://github.com/dyq086/wxYuHanStore/blob/master/screenshots/WechatIMG263.jpeg" width="365" height="619" /> 	<img src="https://github.com/dyq086/wxYuHanStore/blob/master/screenshots/WechatIMG264.jpeg" width="365" height="619"/> 
+![](https://github.com/zzengzeng/demo/blob/master/public/screenshots/screenshots.png)
+
 
 ### 说明
         此demo依据express搭建，仅供学习参考。
